@@ -1,4 +1,4 @@
-package javafxproject;
+package src.javafxproject;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

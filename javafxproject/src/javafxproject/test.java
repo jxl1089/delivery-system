@@ -1,4 +1,4 @@
-package javafxproject;
+package src.javafxproject;
 
 public class test {
 }
