@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author tmdwn
+ *
+ */
+module testlol {
+}
