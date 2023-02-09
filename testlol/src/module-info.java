@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author tmdwn
- *
- */
-module testlol {
-}
