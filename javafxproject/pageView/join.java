@@ -1,3 +1,5 @@
+package pageView;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,9 +15,9 @@ public class join extends Application{
 				getClass().getResource("join.fxml"));
 		
 		Scene scene = new Scene(root);
+		
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
 	}
 	public static void main(String[] args) {
 		launch(args);
