@@ -6,5 +6,6 @@ public interface CommonService{
 	
 	void cancleEvent(ActionEvent event);
 	void errorMsg(String subject, String head, String content);
+	void windowClose(ActionEvent event);
 
 }

@@ -49,8 +49,8 @@ public class Member {
 	public String getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setGender(String b) {
+		this.gender = b;
 	}
 	public String getPhoneNum() {
 		return phoneNum;

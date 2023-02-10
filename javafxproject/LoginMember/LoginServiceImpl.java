@@ -12,4 +12,16 @@ public class LoginServiceImpl implements LoginService{
 		
 	}
 
+	@Override
+	public void memberInfo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void membershipProc(Parent root) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
