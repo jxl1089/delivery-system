@@ -10,7 +10,7 @@ public class MainPage extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		FXMLLoader loader = new FXMLLoader(getClass
-				().getResource("MainPage"));
+				().getResource("MainPage.fxml"));
 		Parent root = loader.load();
 		
 		Scene scene = new Scene(root);
