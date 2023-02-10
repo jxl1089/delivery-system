@@ -1,7 +1,7 @@
 package dao;
 
-import LoginMember.LoginService;
-import LoginMember.LoginServiceImpl;
+import memberservice.LoginService;
+import memberservice.LoginServiceImpl;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import memberservice.CommonService;
@@ -42,8 +42,6 @@ public class Controller {
 		ls.membershipProc(root);
 	}
 	
-	// 문제 : 회원가입창에 회원 가입 버튼을 누르면 MemberServiceImpl 의 joinMember()
-	// 메서드가 실행 되도록 해보세요. "회원 가입 버튼이 눌렸습니다." 출력 되게 하세요
 	public void joinMember() {
 		ms.joinMember(member);
 	}

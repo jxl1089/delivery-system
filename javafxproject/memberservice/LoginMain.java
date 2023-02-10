@@ -1,4 +1,4 @@
-package LoginMember;
+package memberservice;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
