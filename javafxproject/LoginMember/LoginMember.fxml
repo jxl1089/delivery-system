@@ -30,7 +30,7 @@
          <children>
             <VBox prefHeight="79.0" prefWidth="294.0" spacing="5.0">
                <children>
-                  <Label text="아이디">
+                  <Label fx:id = "txtId" text="아이디">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
@@ -50,7 +50,7 @@
             </VBox>
             <VBox prefHeight="79.0" prefWidth="347.0" spacing="5.0" GridPane.rowIndex="1">
                <children>
-                  <Label text="패스워드">
+                  <Label fx:id = "txtpw" text="패스워드">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
