@@ -6,20 +6,20 @@ import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import memberservice.CommonService;
 import memberservice.CommonServiceImpl;
-import memberservice.JoinService;
-import memberservice.JoinServiceImpl;
+import memberservice.MemberService;
+import memberservice.MemberServiceImpl;
 
 public class Controller {
 	private Parent root;
 	private LoginService ls;
 	private CommonService cs;
 	private Parent member;
-	private JoinService ms;
+	private MemberService ms;
 	
 	public Controller() {
 		ls = new LoginServiceImpl();
 		cs = new CommonServiceImpl();
-		ms = new JoinServiceImpl();
+		ms = new MemberServiceImpl();
 	}
 	
 	public void setRoot(Parent root) {

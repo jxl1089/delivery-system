@@ -12,7 +12,7 @@ public class LoginMember extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Parent root = FXMLLoader.load(
-				getClass().getResource("LoginMember.fxml"));
+				getClass().getResource("../LoginMember.fxml"));
 		
 		Scene scene = new Scene(root);
 		

@@ -9,12 +9,12 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import member.Member;
 
-public class JoinServiceImpl implements JoinService{
+public class MemberServiceImpl implements MemberService{
 
 	CommonService cs;
 	DatabaseService ds;
 	
-	public JoinServiceImpl() {
+	public MemberServiceImpl() {
 		// TODO Auto-generated constructor stub
 		cs = new CommonServiceImpl();
 		ds = new DataServiceImpl();

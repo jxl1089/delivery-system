@@ -2,6 +2,6 @@ package memberservice;
 
 import javafx.scene.Parent;
 
-public interface JoinService {
+public interface MemberService {
 	void joinMember(Parent membership);
 }
