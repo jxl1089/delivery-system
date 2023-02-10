@@ -78,26 +78,5 @@ public class MemberServiceImpl implements MemberService{
 					m.setGender("여자");
 				}
 				
-				ComboBox<String> cmbAge = 
-						(ComboBox<String>) membership.lookup("#cmbAge");
-				
-				if(cmbAge.getValue() == null) {
-					cs.errorMsg("나이", "나이대 선택", "나이대가 선택되지 않았습니다.");
-					cmbAge.requestFocus();
-					return;
-				} else if(cmbAge.getValue().equals("20대미만")) {
-					m.setAge(10);
-				} else if(cmbAge.getValue().equals("20대")) {
-					m.setAge(20);
-				} else if(cmbAge.getValue().equals("30대")) {
-					m.setAge(30);
-				} else if(cmbAge.getValue().equals("40대")) {
-					m.setAge(40);
-				} else if(cmbAge.getValue().equals("50대")) {
-					m.setAge(50);
-				} else if(cmbAge.getValue().equals("60대이상")) {
-					m.setAge(60);
-				}
-				
 	}
 }

@@ -63,7 +63,7 @@
             </VBox>
          </children>
       </GridPane>
-      <Button layoutX="92.0" layoutY="305.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #00008B;" text="로그인" textFill="WHITE">
+      <Button onAction="#loginProc" layoutX="92.0" layoutY="305.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #00008B;" text="로그인" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>
