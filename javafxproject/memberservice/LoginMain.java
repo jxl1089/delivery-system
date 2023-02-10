@@ -1,5 +1,6 @@
 package memberservice;
 
+import dao.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,11 +12,13 @@ public class LoginMain extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		Parent root = FXMLLoader.load(
-				getClass().getResource("../LoginMember.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../LoginMember.fxml"));
+		
+		Parent root = loader.load();
+		Controller crtl = loader.getController();
+		crtl.setRoot(root);
 		
 		Scene scene = new Scene(root);
-		
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

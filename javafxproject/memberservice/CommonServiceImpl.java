@@ -8,12 +8,6 @@ import javafx.stage.Stage;
 
 public class CommonServiceImpl implements CommonService {
 
-	@Override
-	public void cancleEvent(ActionEvent event) {
-		// TODO Auto-generated method stub		
-			}
-
-	
 
 	@Override
 	public void errorMsg(String subject, String head, String content) {
