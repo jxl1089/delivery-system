@@ -64,6 +64,7 @@ public class MemberServiceImpl implements MemberService{
 					pwFld[0].requestFocus();
 					return;
 				}
+				
 				RadioButton rdoMan = (RadioButton) membership.lookup("#rdoMan");
 				RadioButton rdoWoman = (RadioButton) membership.lookup("#rdoWoman");
 				
