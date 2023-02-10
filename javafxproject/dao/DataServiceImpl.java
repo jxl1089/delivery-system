@@ -31,14 +31,6 @@ public class DataServiceImpl implements DatabaseService{
 			e.printStackTrace();
 		}
 	}
-	String id;
-	String pw;
-	String chkPw;
-	String name;
-	String email;
-	int age;
-	String gender;
-	String phoneNum;
 	
 	@Override
 	public boolean insert(Member m) {
