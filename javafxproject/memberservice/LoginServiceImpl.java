@@ -52,7 +52,7 @@ public class LoginServiceImpl implements LoginService{
 		Stage membershipForm = new Stage();
 		
 		FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("../../membershipForm.fxml"));
+				getClass().getResource("../JoinMember.fxml"));
 		
 		Parent member = null;
 		try {
