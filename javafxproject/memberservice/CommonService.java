@@ -1,6 +1,7 @@
 package memberservice;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert.AlertType;
 
 public interface CommonService{
 
