@@ -25,8 +25,8 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 				
 
-				String txtFldName[] = {"#txtName", "#txtId", "#txtPw", "#txtPwOk"};
-				String columnName[] = {"이름","아이디","암호","암호확인"};
+				String txtFldName[] = {"#txtid", "#txtpw", "#txtPwOk", "#txtname" , "txtage","txtnum","txtemail"};
+				String columnName[] = {"아이디","암호","암호확인","회원이름","나이","연락처","이메일"};
 				TextField txtFld[] = new TextField[2];
 				PasswordField pwFld[] = new PasswordField[2];
 
@@ -50,6 +50,7 @@ public class MemberServiceImpl implements MemberService{
 						}
 					}
 				}
+				
 				
 				
 				if(pwFld[0].getText().equals(pwFld[1].getText())) {
