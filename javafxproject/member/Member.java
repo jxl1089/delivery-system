@@ -10,6 +10,8 @@ public class Member {
 	int age;
 	String gender;
 	String phoneNum;
+	public boolean getId;
+	private Boolean chkId;
 	public String getId() {
 		return id;
 	}
@@ -22,11 +24,11 @@ public class Member {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getChkPw() {
-		return chkPw;
+	public boolean getChkId() {
+		return getChkId();
 	}
-	public void setChkPw(String chkPw) {
-		this.chkPw = chkPw;
+	public void setChkId(Boolean chkId) {
+		this.chkId = chkId;
 	}
 	public String getName() {
 		return name;
@@ -49,8 +51,8 @@ public class Member {
 	public String getGender() {
 		return gender;
 	}
-	public void setGender(String b) {
-		this.gender = b;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	public String getPhoneNum() {
 		return phoneNum;

@@ -52,7 +52,7 @@ public class LoginServiceImpl implements LoginService{
 		Stage membershipForm = new Stage();
 		
 		FXMLLoader loader = new FXMLLoader(
-				getClass().getResource("../JoinMember.fxml"));
+				getClass().getResource("../pageView/login.fxml"));
 		
 		Parent member = null;
 		try {
@@ -68,6 +68,12 @@ public class LoginServiceImpl implements LoginService{
 		
 		membershipForm.setTitle("회원가입창");
 		membershipForm.show();
+		
+	}
+
+	@Override
+	public void memberInfo() {
+		// TODO Auto-generated method stub
 		
 	}
 
