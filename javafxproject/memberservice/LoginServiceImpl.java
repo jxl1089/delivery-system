@@ -33,6 +33,7 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 		
 		TextField id = (TextField) root.lookup("#txtId");
+		System.out.println(id.getText());
 		PasswordField pw = (PasswordField) root.lookup("#txtPw");
 		
 		if(ds.loginChk(id.getText(), pw.getText())) {
@@ -42,6 +43,7 @@ public class LoginServiceImpl implements LoginService{
 		} else {
 			System.out.println("로그인 실패");
 		}
+		boolean result = ds.loginChk(id.getText(), pw.getText());
 	}
 
 	@Override

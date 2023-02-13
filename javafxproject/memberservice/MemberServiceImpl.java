@@ -99,12 +99,6 @@ public class MemberServiceImpl implements MemberService{
 		}
 
 		
-		
-		
-		
-		
-		
-		
 		if(ds.insert(m)) {
 			Stage s = (Stage) membership.getScene().getWindow();
 			s.close();

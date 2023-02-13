@@ -69,10 +69,8 @@ public class DataServiceImpl implements DatabaseService{
 	public boolean chkId(String id) {
 		// TODO Auto-generated method stub
 		boolean result = false;
-		String sql = "select decode(count(*), 1, 'false','true')"
-				+ "from member where id=?";
+		String sql = "select decode(count(*), 1, 'false', 'true')"+" from member where id=?";
 		try {
-			System.out.println(con);
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			
@@ -86,7 +84,7 @@ public class DataServiceImpl implements DatabaseService{
 			e.printStackTrace();
 		}
 		
-		return true;
+		return result;
 	}
 
 	
@@ -94,7 +92,7 @@ public class DataServiceImpl implements DatabaseService{
 	@Override
 	public boolean loginChk(String id, String pw) {
 		// TODO Auto-generated method stub
-		String sql = "select count (*) from member where = ?";
+		String sql = "select count(*) from member where id=? and pw=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);

@@ -38,7 +38,7 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id = "txtId" prefHeight="35.0" prefWidth="308.0">
+                  <TextField fx:id="txtId" prefHeight="35.0" prefWidth="308.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -58,7 +58,7 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id = "txtPw" prefHeight="35.0" />
+                  <PasswordField fx:id="txtPw" prefHeight="35.0" />
                </children>
                <opaqueInsets>
                   <Insets />
