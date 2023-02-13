@@ -59,6 +59,16 @@ public class MemberServiceImpl implements MemberService{
 			}
 		}
 		
+		TextField age = (TextField) membership.lookup("#txtAge");
+		String age2 = age.getText();
+		int age3 = Integer.parseInt(age2);
+		
+		RadioButton rdoMan = (RadioButton) membership.lookup("#rdoMan");
+		RadioButton rdoWoman = (RadioButton) membership.lookup("#rdoWoman");
+		
+		TextField phn = (TextField) membership.lookup("#txtNum");
+		String phn2 = phn.getText();
+		
 		// 암호 와 암호 확인의 값이 같은 때는 암호가 일치한다는 Alert 메시지 출력
 		// 같지 않을 때는 암호가 일치하지 않는다는 Alert 메시지 출력		
 		if(pwFld[0].getText().equals(pwFld[1].getText())) {
@@ -66,6 +76,20 @@ public class MemberServiceImpl implements MemberService{
 			m.setName(txtFld[0].getText());
 			m.setId(txtFld[1].getText());
 			m.setPw(pwFld[0].getText());
+			m.setEmail(txtFld[2].getText());
+			m.setAge(age3);
+			if(!rdoMan.isSelected() && !rdoWoman.isSelected()) {
+				cs.errorMsg("성별", "성별 선택", "성별이 선택되지 않았습니다.");
+				// setSelected(true) : 미리 체크 해 주기
+				rdoMan.setSelected(true);
+				return;
+			} else if(rdoMan.isSelected()) {
+				m.setGender("남성");
+			} else if(rdoWoman.isSelected()) {
+				m.setGender("여성");
+			}
+			m.setPhoneNum(phn2);
+			
 		} else {
 			cs.errorMsg("암호", "암호일치여부", "암호가 틀립니다.");
 			pwFld[0].clear();
@@ -74,18 +98,11 @@ public class MemberServiceImpl implements MemberService{
 			return;
 		}
 
-		RadioButton rdoMan = (RadioButton) membership.lookup("#rdoMan");
-		RadioButton rdoWoman = (RadioButton) membership.lookup("#rdoWoman");
 		
-		if(!rdoMan.isSelected() && !rdoWoman.isSelected()) {
-			cs.errorMsg("성별", "성별 선택", "성별이 선택되지 않았습니다.");
-			// setSelected(true) : 미리 체크 해 주기
-			rdoMan.setSelected(true);
-			return;
-		}
 		
-		TextField Email = (TextField) membership.lookup("#txtEmail");
-		TextField age = (TextField) membership.lookup("#txtAge");
+		
+		
+		
 		
 		
 		if(ds.insert(m)) {
