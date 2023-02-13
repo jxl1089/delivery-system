@@ -82,7 +82,10 @@ public class MemberServiceImpl implements MemberService{
 			// setSelected(true) : 미리 체크 해 주기
 			rdoMan.setSelected(true);
 			return;
-		} 
+		}
+		
+		TextField Email = (TextField) membership.lookup("#txtEmail");
+		TextField age = (TextField) membership.lookup("#txtAge");
 		
 		
 		if(ds.insert(m)) {
@@ -91,6 +94,7 @@ public class MemberServiceImpl implements MemberService{
 		} else {
 			txtFld[0].clear();
 			txtFld[1].clear();
+			txtFld[2].clear();
 			pwFld[0].clear();
 			pwFld[1].clear();
 			txtFld[0].requestFocus();
