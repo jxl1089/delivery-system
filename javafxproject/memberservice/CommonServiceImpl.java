@@ -23,7 +23,7 @@ public class CommonServiceImpl implements CommonService {
 
 
 	@Override
-	public void windowClose(ActionEvent event) {
+	public void cancleEvent(ActionEvent event) {
 		// TODO Auto-generated method stub
 		Parent p = (Parent) event.getSource();
 		// Parent 에서 Stage 가져오기

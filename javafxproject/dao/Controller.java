@@ -36,7 +36,7 @@ public class Controller {
 		ls.loginProc(root);
 	}
 	public void cancelProc(ActionEvent event) {
-		cs.windowClose(event);
+		cs.cancleEvent(event);
 	}
 	public void membershipProc() {
 		ls.membershipProc(root);
