@@ -33,12 +33,12 @@
          <children>
             <VBox prefHeight="61.0" prefWidth="288.0" spacing="5.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="txtpw" text="패스워드">
+                  <Label  text="패스워드">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField prefHeight="30.0" prefWidth="281.0" />
+                  <PasswordField fx:id="txtPw" prefHeight="30.0" prefWidth="281.0" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -61,12 +61,12 @@
       </GridPane>
       <VBox layoutX="23.0" layoutY="372.0" prefHeight="61.0" prefWidth="294.0" spacing="5.0">
          <children>
-            <Label fx:id="txtname" text="회원이름">
+            <Label  text="회원이름">
                <font>
                   <Font name="210 Gulim 070" size="14.0" />
                </font>
             </Label>
-            <TextField prefHeight="30.0" prefWidth="308.0">
+            <TextField fx:id="txtName" prefHeight="30.0" prefWidth="308.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -86,12 +86,12 @@
          <children>
             <VBox prefHeight="61.0" prefWidth="113.0" spacing="5.0">
                <children>
-                  <Label fx:id = "txtage" text="나이">
+                  <Label  text="나이">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="30.0" prefWidth="110.0">
+                  <TextField fx:id = "txtAge" prefHeight="30.0" prefWidth="110.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -115,7 +115,7 @@
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <RadioButton mnemonicParsing="false" text="남성">
+                  <RadioButton fx:id = "rdoMan" mnemonicParsing="false" text="남성">
                      <font>
                         <Font name="210 Gulim 030" size="13.0" />
                      </font>
@@ -128,7 +128,7 @@
                   <Insets />
                </opaqueInsets>
             </VBox>
-            <RadioButton mnemonicParsing="false" text="여성">
+            <RadioButton fx:id ="rdoWoman" mnemonicParsing="false" text="여성">
                <font>
                   <Font name="210 Gulim 030" size="13.0" />
                </font>
@@ -150,12 +150,12 @@
          <children>
             <VBox prefHeight="123.0" prefWidth="294.0" spacing="5.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id= "txtnum" text="연락처">
+                  <Label  text="연락처">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="30.0" prefWidth="308.0">
+                  <TextField fx:id= "txtNum" prefHeight="30.0" prefWidth="308.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -170,7 +170,7 @@
             </VBox>
             <VBox prefHeight="74.0" prefWidth="294.0" spacing="5.0" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id = "txtemail" text="이메일">
+                  <Label  text="이메일">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
@@ -178,7 +178,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <TextField prefHeight="30.0" prefWidth="308.0">
+                  <TextField fx:id = "txtEmail" prefHeight="30.0" prefWidth="308.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -205,12 +205,12 @@
       </Button>
       <VBox layoutX="21.0" layoutY="131.0" prefHeight="64.0" prefWidth="222.0" spacing="5.0">
          <children>
-            <Label fx:id="txtid" text="아이디">
+            <Label  text="아이디">
                <font>
                   <Font name="210 Gulim 070" size="14.0" />
                </font>
             </Label>
-            <TextField prefHeight="30.0" prefWidth="230.0">
+            <TextField fx:id="txtId" prefHeight="30.0" prefWidth="230.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
