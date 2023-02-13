@@ -12,7 +12,7 @@ public class join extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Parent root = FXMLLoader.load(
-				getClass().getResource("join.fxml"));
+				getClass().getResource("register.fxml"));
 		
 		Scene scene = new Scene(root);
 		
