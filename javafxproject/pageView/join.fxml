@@ -12,7 +12,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="477.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" 
+minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="477.0" 
+style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" 
+xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
    <children>
       <Label layoutX="204.0" layoutY="57.0" text="로그인" textFill="DARKBLUE">
          <font>
@@ -30,7 +33,7 @@
          <children>
             <VBox prefHeight="79.0" prefWidth="294.0" spacing="5.0">
                <children>
-                  <Label text="아이디">
+                  <Label fx:id = "txtId" text="아이디">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
@@ -50,7 +53,7 @@
             </VBox>
             <VBox prefHeight="79.0" prefWidth="347.0" spacing="5.0" GridPane.rowIndex="1">
                <children>
-                  <Label text="패스워드">
+                  <Label fx:id = "txtpw" text="패스워드">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
@@ -63,12 +66,12 @@
             </VBox>
          </children>
       </GridPane>
-      <Button layoutX="92.0" layoutY="305.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #00008B;" text="로그인" textFill="WHITE">
+      <Button onAction="#loginProc" layoutX="92.0" layoutY="305.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #00008B;" text="로그인" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="92.0" layoutY="494.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #8a8a8a;" text="회원가입" textFill="WHITE">
+      <Button onAction="#membershipProc" layoutX="92.0" layoutY="494.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #8a8a8a;" text="회원가입" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>
