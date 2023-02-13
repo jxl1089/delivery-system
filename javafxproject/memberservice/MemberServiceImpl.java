@@ -31,7 +31,7 @@ public class MemberServiceImpl implements MemberService{
 		// 이름 : txtName, 아이디 : txtId, 암호 : txtPw, 암호확인 : txtPwOk
 		// 입력 된 값을 출력해보세요
 
-		String txtFldName[] = {"#txtName", "#txtId","txtEmail", "#txtPw", "#txtPwOk" };
+		String txtFldName[] = {"#txtName", "#txtId","#txtEmail", "#txtPw", "#txtPwOk" };
 		String columnName[] = {"이름","아이디","이메일","암호","암호확인"};
 		TextField txtFld[] = new TextField[3];
 		PasswordField pwFld[] = new PasswordField[2];
@@ -50,10 +50,10 @@ public class MemberServiceImpl implements MemberService{
 					return;
 				}
 			} else if(i<5) {
-				pwFld[i-2] = (PasswordField) membership.lookup(txtFldName[i]);
-				if(pwFld[i-2].getText().isEmpty()) {
+				pwFld[i-3] = (PasswordField) membership.lookup(txtFldName[i]);
+				if(pwFld[i-3].getText().isEmpty()) {
 					cs.errorMsg("입력 에러", "비어 있는 컬럼", columnName[i] + " 필드가 비어 있습니다.");
-					pwFld[i-2].requestFocus();
+					pwFld[i-3].requestFocus();
 					return;
 				}
 			}

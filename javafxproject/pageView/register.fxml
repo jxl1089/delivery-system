@@ -46,12 +46,12 @@
             </VBox>
             <VBox prefHeight="61.0" prefWidth="288.0" spacing="5.0" GridPane.rowIndex="2">
                <children>
-                  <Label fx:id="txtPwOk" text="패스워드 확인">
+                  <Label  text="패스워드 확인">
                      <font>
                         <Font name="210 Gulim 070" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField prefHeight="30.0" prefWidth="286.0" />
+                  <PasswordField fx:id="txtPwOk" prefHeight="30.0" prefWidth="286.0" />
                </children>
                <opaqueInsets>
                   <Insets />

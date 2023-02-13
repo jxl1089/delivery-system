@@ -19,11 +19,11 @@ public class DataServiceImpl implements DatabaseService{
 		
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String user = "system";
-		String pass = "1234";
+		String pass = "oracle";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url,user,pass);
+			con = DriverManager.getConnection(url,user,pass); //Connection 전역 변수 사용했으니 여기에서는 사용안함
 			System.out.println("오라클 연결 성공");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -72,6 +72,7 @@ public class DataServiceImpl implements DatabaseService{
 		String sql = "select decode(count(*), 1, 'false','true')"
 				+ "from member where id=?";
 		try {
+			System.out.println(con);
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			
