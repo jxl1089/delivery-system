@@ -81,7 +81,7 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
             <Font name="BM DoHyeon OTF" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="93.0" layoutY="372.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #dcdcdc;" text="취소" textFill="WHITE">
+      <Button onAction="#cancelProc" layoutX="93.0" layoutY="372.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #dcdcdc;" text="취소" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>

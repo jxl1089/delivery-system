@@ -99,10 +99,10 @@ public class DataServiceImpl implements DatabaseService{
 			pstmt.setString(2, pw);
 			
 			rs = pstmt.executeQuery();
-			
+			rs.next();
 			int result = rs.getInt(1);
 			
-			rs.next();
+
 			
 			if(result >=1) {
 				return true;

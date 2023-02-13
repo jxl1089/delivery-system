@@ -31,15 +31,15 @@ public class LoginServiceImpl implements LoginService{
 	@Override
 	public void loginProc(Parent root) {
 		// TODO Auto-generated method stub
-		
-		TextField id = (TextField) root.lookup("#txtId");
-		System.out.println(id.getText());
+
+		TextField id = (TextField)root.lookup("#txtId");
 		PasswordField pw = (PasswordField) root.lookup("#txtPw");
 		
 		if(ds.loginChk(id.getText(), pw.getText())) {
 			System.out.println("로그인 성공");
 			Stage s = (Stage)root.getScene().getWindow();
 			s.close();
+			mainPage();
 		} else {
 			System.out.println("로그인 실패");
 		}
@@ -72,10 +72,24 @@ public class LoginServiceImpl implements LoginService{
 		membershipForm.show();
 		
 	}
+
 	@Override
-	public void memberInfo() {
+	public void mainPage() {
 		// TODO Auto-generated method stub
+		Stage mainP = new Stage();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../pageView/MainPage.fxml"));
+		Parent member = null;
+		try {
+			member = loader.load();
+			mainP.setScene(new Scene(member));
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		
+
+		mainP.setTitle("메인페이지");
+		mainP.show();
 	}
 
 }
