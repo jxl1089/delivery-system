@@ -1,0 +1,31 @@
+CREATE TABLE member(
+
+id varchar2(30) primary key not null ,
+
+pw varchar2(30) not null,
+
+name varchar2(30) not null,
+
+Email varchar2(50) not null,
+
+age int not null,
+
+gender varchar2(30) not null,
+
+phoneNum varchar2(30) not null
+);
+
+select*from member;
+
+create TABLE Request(
+request_num int primary key not null,
+request_id varchar2(30) ,
+request_name varchar(30) not null,
+request_contents varchar(100) not null,
+request_price varchar(30) not null
+
+);
+ALTER TABLE request ADD CONSTRAINT rq_id FOREIGN KEY(request_id) REFERENCES member(id);
+
+select*from request;
+
