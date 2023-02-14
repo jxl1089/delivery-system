@@ -2,6 +2,7 @@ package mainpageservice;
 
 import java.util.List;
 
+import board.Boarder;
 import dao.DatabaseService;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.collections.FXCollections;

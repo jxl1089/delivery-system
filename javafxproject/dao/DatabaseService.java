@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import mainpageservice.Boarder;
+import board.Boarder;
 import member.Member;
 
 public interface DatabaseService { 

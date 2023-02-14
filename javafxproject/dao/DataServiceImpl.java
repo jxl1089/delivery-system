@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import mainpageservice.Boarder;
+import board.Boarder;
 import member.Member;
 
 
