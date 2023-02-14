@@ -33,7 +33,6 @@ public class Controller {
 	}
 	
 	public void loginProc() {
-		System.out.println(root);
 		ls.loginProc(root);
 	}
 	public void cancelProc(ActionEvent event) {
