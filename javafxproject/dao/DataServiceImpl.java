@@ -19,7 +19,7 @@ public class DataServiceImpl implements DatabaseService{
 		
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String user = "system";
-		String pass = "1234";
+		String pass = "oracle";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
