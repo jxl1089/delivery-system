@@ -8,16 +8,21 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import memberservice.CommonService;
 import memberservice.CommonServiceImpl;
+import memberservice.LoginServiceImpl;
+
 
 
 public class WritePageServiceImpl implements WritePageService{
 
 	CommonService cs;
+	public static String id;
 	DatabaseService ds;
+	LoginServiceImpl ls;
 	
 	public WritePageServiceImpl() {
 		cs = new CommonServiceImpl();
 		ds = new DataServiceImpl();
+		ls = new LoginServiceImpl();
 	}
 	
 
@@ -64,6 +69,8 @@ public class WritePageServiceImpl implements WritePageService{
 		    qid = longToBase64(time);
 		    
 		}
+		
+
 		
 		Boarder b = new Boarder();
 		b.setQuest_id(qid);
