@@ -16,6 +16,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import mainpageservice.WritePageService;
+import mainpageservice.WritePageServiceImpl;
+import mainpageservice.mainpageService;
+import mainpageservice.mainpageServiceImpl;
 import memberservice.CommonService;
 import memberservice.CommonServiceImpl;
 import memberservice.MemberService;
@@ -29,12 +33,15 @@ public class Controller {
 	private CommonService cs;
 	private Parent member;
 	private MemberService ms;
-	
+	private mainpageService mp;
+	private WritePageService wp;
 	
 	public Controller() {
 		ls = new LoginServiceImpl();
 		cs = new CommonServiceImpl();
 		ms = new MemberServiceImpl();
+		mp = new mainpageServiceImpl();
+		wp = new WritePageServiceImpl();
 	}
 	
 	public void setRoot(Parent root) {
@@ -48,7 +55,6 @@ public class Controller {
 	}
 	
 	public void loginProc() {
-		System.out.println(root);
 		ls.loginProc(root);
 	}
 	public void cancelProc(ActionEvent event) {
@@ -60,6 +66,9 @@ public class Controller {
 	
 	public void joinMember() {
 		ms.joinMember(member);
+	}
+	public void wirteProc() {
+		mp.wirteProc(root);
 	}
 	
 	@FXML

@@ -2,6 +2,7 @@ package memberservice;
 
 import java.util.List;
 
+import board.Boarder;
 import dao.Controller;
 import dao.DataServiceImpl;
 import dao.DatabaseService;
@@ -34,6 +35,7 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 
 		TextField id = (TextField)root.lookup("#txtId");
+		String trueid = id.getText();
 		PasswordField pw = (PasswordField) root.lookup("#txtPw");
 		
 		if(ds.loginChk(id.getText(), pw.getText())) {
@@ -45,6 +47,10 @@ public class LoginServiceImpl implements LoginService{
 			System.out.println("로그인 실패");
 		}
 		boolean result = ds.loginChk(id.getText(), pw.getText());
+		
+		Boarder b = new Boarder();
+		b.setUser_id(trueid);
+		//여기의 id값을 wirtepageservice에 가져가야함
 	}
 
 	@Override
