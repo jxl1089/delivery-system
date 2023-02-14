@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import memberservice.CommonService;
 import memberservice.CommonServiceImpl;
 
+
 public class WritePageServiceImpl implements WritePageService{
 
 	CommonService cs;
@@ -22,6 +23,8 @@ public class WritePageServiceImpl implements WritePageService{
 	public void writeQuest(Parent root) {
 		// TODO Auto-generated method stub
 		
+		//로그인한 정보 가져와서 setUser_id에 삽입
+		
 		TextField details = (TextField)root.lookup("#q_detail");
 		TextField price = (TextField)root.lookup("#q_price");
 		String price2 = price.getText();
@@ -29,6 +32,8 @@ public class WritePageServiceImpl implements WritePageService{
 		
 		
 		Boarder b = new Boarder();
+		b.setQuest_id(price2);
+		b.setUser_name(price2);
 		b.setQuest_detail(details.getText());
 		b.setQuest_price(price3);
 		

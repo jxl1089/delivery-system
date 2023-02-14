@@ -42,6 +42,12 @@ public class mainpageServiceImpl implements mainpageService{
 	}
 	
 	boolean btn_boarder;
+
+	@Override
+	public void wirteProc() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

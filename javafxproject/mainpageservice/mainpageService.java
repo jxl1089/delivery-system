@@ -6,5 +6,6 @@ import member.Member;
 
 public interface mainpageService {
 	void boarderinfo();
+	void wirteProc();
 	
 }
