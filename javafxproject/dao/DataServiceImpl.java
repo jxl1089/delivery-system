@@ -23,7 +23,7 @@ public class DataServiceImpl implements DatabaseService{
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(url,user,pass);
+			con = DriverManager.getConnection(url,user,pass); //Connection 전역 변수 사용했으니 여기에서는 사용안함
 			System.out.println("오라클 연결 성공");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -69,8 +69,7 @@ public class DataServiceImpl implements DatabaseService{
 	public boolean chkId(String id) {
 		// TODO Auto-generated method stub
 		boolean result = false;
-		String sql = "select decode(count(*), 1, 'false','true')"
-				+ "from member where id=?";
+		String sql = "select decode(count(*), 1, 'false', 'true')"+" from member where id=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -85,7 +84,7 @@ public class DataServiceImpl implements DatabaseService{
 			e.printStackTrace();
 		}
 		
-		return true;
+		return result;
 	}
 
 	
@@ -93,17 +92,17 @@ public class DataServiceImpl implements DatabaseService{
 	@Override
 	public boolean loginChk(String id, String pw) {
 		// TODO Auto-generated method stub
-		String sql = "select count (*) from member where = ?";
+		String sql = "select count(*) from member where id=? and pw=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);
 			
 			rs = pstmt.executeQuery();
-			
+			rs.next();
 			int result = rs.getInt(1);
 			
-			rs.next();
+
 			
 			if(result >=1) {
 				return true;
