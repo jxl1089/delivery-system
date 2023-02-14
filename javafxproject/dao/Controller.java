@@ -32,6 +32,7 @@ public class Controller {
 	private LoginService ls;
 	private CommonService cs;
 	private Parent member;
+	private Parent board;
 	private MemberService ms;
 	private mainpageService mp;
 	private WritePageService wp;
@@ -69,6 +70,9 @@ public class Controller {
 	}
 	public void wirteProc() {
 		mp.wirteProc(root);
+	}
+	public void writeQuest() {
+		wp.writeQuest(board);
 	}
 	
 	@FXML

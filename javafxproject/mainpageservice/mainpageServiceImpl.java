@@ -24,28 +24,27 @@ public class mainpageServiceImpl implements mainpageService{
 	@Override
 	public void boarderinfo() {
 		// TODO Auto-generated method stub
-	
+
 	}
-	
+
 
 
 	@Override
 	public void wirteProc(Parent root) {
 		// TODO Auto-generated method stub
-Stage membershipForm = new Stage();
-		
+		Stage membershipForm = new Stage();
+
 		FXMLLoader loader = new FXMLLoader(
 				getClass().getResource("../pageView/writepage.fxml"));
-		
+
 		Parent boarder = null;
 		try {
 			boarder = loader.load();
-			
 			membershipForm.setScene(new Scene(boarder));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		Controller ctrl = loader.getController();
 		ctrl.setMember(boarder);
 		

@@ -21,7 +21,7 @@ public class DataServiceImpl implements DatabaseService{
 		
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String user = "system";
-		String pass = "1234";
+		String pass = "oracle";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -149,9 +149,6 @@ public class DataServiceImpl implements DatabaseService{
 	public boolean q_insert(Boarder b) {
 		// TODO Auto-generated method stub
 		//primarykey값을 어떻게 가져올 것인가
-		int number = 0;
-		number++;
-		String number3 = Integer.toString(number);
 		String sql = "insert into quest values (? , ? , ? , ?)";
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -165,11 +162,5 @@ public class DataServiceImpl implements DatabaseService{
 		return false;
 	}
 
-
-	@Override
-	public boolean write(Boarder b) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

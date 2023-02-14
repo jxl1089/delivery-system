@@ -42,14 +42,35 @@ public class LoginServiceImpl implements LoginService{
 			System.out.println("로그인 성공");
 			Stage s = (Stage)root.getScene().getWindow();
 			s.close();
-			mainPage();
+			
+			Stage mainP = new Stage();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../pageView/MainPage.fxml"));
+			Parent board = null;
+			
+			try {
+				board = loader.load();
+				mainP.setScene(new Scene(board));
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			
+			Boarder b = new Boarder();
+			b.setUser_id(trueid);
+			
+			Controller ctrl = loader.getController();
+			ctrl.setMember(board);
+			
+			mainP.setTitle("메인페이지");
+			mainP.show();
+			
+			
 		} else {
 			System.out.println("로그인 실패");
 		}
 		boolean result = ds.loginChk(id.getText(), pw.getText());
 		
-		Boarder b = new Boarder();
-		b.setUser_id(trueid);
+		
 		//여기의 id값을 wirtepageservice에 가져가야함
 	}
 
@@ -80,24 +101,6 @@ public class LoginServiceImpl implements LoginService{
 		
 	}
 
-	@Override
-	public void mainPage() {
-		// TODO Auto-generated method stub
-		Stage mainP = new Stage();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../pageView/MainPage.fxml"));
-		Parent member = null;
-		try {
-			member = loader.load();
-			mainP.setScene(new Scene(member));
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
-
-		mainP.setTitle("메인페이지");
-		mainP.show();
-	}
 
 	@Override
 	public void logout() {

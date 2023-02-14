@@ -11,9 +11,6 @@ public interface DatabaseService {
 	public boolean chkId(String id);
 	public boolean loginChk(String id, String pw);
 	public List<Member> selectAll();
-
-	
-	public boolean write(Boarder b);
 	
 
 
