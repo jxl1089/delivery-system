@@ -21,7 +21,7 @@ public class DataServiceImpl implements DatabaseService{
 		
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String user = "system";
-		String pass = "oracle";
+		String pass = "1234";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -167,5 +167,11 @@ public class DataServiceImpl implements DatabaseService{
 			e.printStackTrace();
 		}
 		return boarderList;
+	}
+
+	@Override
+	public boolean write(Boarder b) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

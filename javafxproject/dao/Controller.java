@@ -69,27 +69,13 @@ public class Controller {
 	
 	public void logout(ActionEvent event) throws Exception {
 		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("로그아웃");
-		alert.setHeaderText("정말 로그아웃 하시겠습니까?");
+		alert.setTitle("종료");
+		alert.setHeaderText("정말 종료 하시겠습니까?");
 		
 		if(alert.showAndWait().get() == ButtonType.OK) {
 		Stage stage = (Stage) scenePane.getScene().getWindow();
-		System.out.println("정상적으로 로그아웃 되었습니다.");
-		
-		try {
-			Parent login = 
-		FXMLLoader.load(getClass().getResource("../pageView/login.fxml"));
-			Scene scene = new Scene(login);
-			stage.setScene(scene);
-			stage.show();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
-			
-		
+		System.out.println("정상적으로 종료 되었습니다.");
+		stage.close();
 		} 
 		}
 		

@@ -13,7 +13,7 @@
             <Font name="BM DoHyeon OTF" size="11.0" />
          </font>
       </Button>
-      <Button fx:id="logout_button" layoutX="434.0" layoutY="27.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="79.0" text="로그아웃">
+      <Button fx:id="logout_button" layoutX="434.0" layoutY="27.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="79.0" text="종료">
          <font>
             <Font name="BM DoHyeon OTF" size="11.0" />
          </font>

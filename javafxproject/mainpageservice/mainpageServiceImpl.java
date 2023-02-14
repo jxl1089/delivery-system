@@ -35,12 +35,20 @@ public class mainpageServiceImpl implements mainpageService{
 		quest_detail.setCellValueFactory(new PropertyValueFactory<>("quest_detail"));
 		TableColumn<Boarder, Integer> quest_price = new TableColumn<>("quest_price");
 		quest_price.setCellValueFactory(new PropertyValueFactory<>("quest_price"));
-		TableColumn<Boarder, Boolean> btn_boarder = new TableColumn<>("btn_boarder");
 		
 		
+		boraderView.getColumns().addAll(quest_id, user_id,user_name,quest_detail,quest_price);
+		List<Boarder> boarderList = ds.selectAll1();
+		ObservableList<Boarder> data = 
+				FXCollections.observableArrayList(boarderList);
+		boraderView.setItems(data);
+		ap.getChildren().add(boraderView);
+		stage.setScene(new Scene(ap, 400, 200));
+		stage.setTitle("게시글정보");
+		stage.show();
 	}
 	
-	boolean btn_boarder;
+	
 	
 
 }
