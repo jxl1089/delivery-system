@@ -25,7 +25,7 @@ public class WritePageServiceImpl implements WritePageService{
 		// TODO Auto-generated method stub
 		
 		//로그인한 정보 가져와서 setUser_id에 삽입
-		System.out.println("김");
+		System.out.println(root);
 		TextField details = (TextField)root.lookup("#q_detail");
 		System.out.println("이");
 		TextField price = (TextField)root.lookup("#q_price");
@@ -34,7 +34,7 @@ public class WritePageServiceImpl implements WritePageService{
 		
 		
 		Boarder b = new Boarder();
-		b.setUser_name(price2);
+		b.setQuest_detail(price2);
 		b.setQuest_detail(details.getText());
 		b.setQuest_price(price3);
 		

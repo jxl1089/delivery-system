@@ -60,7 +60,7 @@ public class LoginServiceImpl implements LoginService{
 			
 			Controller ctrl = loader.getController();
 			ctrl.setMember(board);
-			
+			System.out.println(board);
 			mainP.setTitle("메인페이지");
 			mainP.show();
 			

@@ -62,17 +62,19 @@ public class Controller {
 		cs.cancleEvent(event);
 	}
 	public void membershipProc() {
+		System.out.println(root);
 		ls.membershipProc(root);
 	}
 	
 	public void joinMember() {
 		ms.joinMember(member);
 	}
+	
 	public void wirteProc() {
 		mp.wirteProc(root);
 	}
 	public void writeQuest() {
-		wp.writeQuest(board);
+		wp.writeQuest(member);
 	}
 	
 	@FXML
