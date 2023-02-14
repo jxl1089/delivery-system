@@ -12,10 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" 
-minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="477.0" 
-style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" 
-xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
+<AnchorPane fx:id="loginPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="477.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
    <children>
       <Label layoutX="204.0" layoutY="57.0" text="로그인" textFill="DARKBLUE">
          <font>
@@ -66,12 +63,12 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
             </VBox>
          </children>
       </GridPane>
-      <Button onAction="#loginProc" layoutX="92.0" layoutY="305.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #00008B;" text="로그인" textFill="WHITE">
+      <Button layoutX="92.0" layoutY="305.0" mnemonicParsing="false" onAction="#loginProc" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #00008B;" text="로그인" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>
       </Button>
-      <Button onAction="#membershipProc" layoutX="92.0" layoutY="494.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #8a8a8a;" text="회원가입" textFill="WHITE">
+      <Button layoutX="92.0" layoutY="494.0" mnemonicParsing="false" onAction="#membershipProc" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #8a8a8a;" text="회원가입" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>
@@ -81,7 +78,7 @@ xmlns:fx="http://javafx.com/fxml/1" fx:controller="dao.Controller">
             <Font name="BM DoHyeon OTF" size="13.0" />
          </font>
       </Label>
-      <Button onAction="#cancelProc" layoutX="93.0" layoutY="372.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #dcdcdc;" text="취소" textFill="WHITE">
+      <Button layoutX="93.0" layoutY="372.0" mnemonicParsing="false" onAction="#cancelProc" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: #dcdcdc;" text="취소" textFill="WHITE">
          <font>
             <Font name="210 Gulim 090" size="13.0" />
          </font>

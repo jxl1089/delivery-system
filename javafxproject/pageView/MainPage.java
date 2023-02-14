@@ -1,5 +1,6 @@
 package pageView;
 
+import dao.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,9 @@ public class MainPage extends Application{
 		FXMLLoader loader = new FXMLLoader(getClass
 				().getResource("MainPage.fxml"));
 		Parent root = loader.load();
+		
+		Controller ctrl = loader.getController();
+		ctrl.setRoot(root);
 		
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);

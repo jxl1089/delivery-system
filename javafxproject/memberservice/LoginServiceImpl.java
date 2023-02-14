@@ -7,6 +7,7 @@ import dao.DataServiceImpl;
 import dao.DatabaseService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -90,6 +91,23 @@ public class LoginServiceImpl implements LoginService{
 
 		mainP.setTitle("메인페이지");
 		mainP.show();
+	}
+
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
+		Stage mainP = new Stage();
+		FXMLLoader loader = new FXMLLoader(
+				getClass().getResource("../pageView/MainPage.fxml"));
+		
+		Parent member =  null;
+		try {
+			member = loader.load();
+			mainP.setScene(new Scene(member));
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 }
