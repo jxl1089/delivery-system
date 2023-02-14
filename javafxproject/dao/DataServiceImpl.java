@@ -136,6 +136,7 @@ public class DataServiceImpl implements DatabaseService{
 				m.setAge(rs.getInt(5));
 				m.setGender(rs.getString(6));
 				m.setPhoneNum(rs.getString(7));
+				
 			
 			}
 		} catch (Exception e) {
@@ -156,6 +157,14 @@ public class DataServiceImpl implements DatabaseService{
 			pstmt.setString(2, b.getUser_id());
 			pstmt.setString(3, b.getQuest_detail());
 			pstmt.setInt(4, b.getQuest_price());
+			
+			int result = pstmt.executeUpdate();
+			
+			if(result == 1) {
+				System.out.println("심부름 등록 완료");
+				return true;
+			}
+			pstmt.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

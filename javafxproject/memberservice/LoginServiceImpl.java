@@ -54,10 +54,7 @@ public class LoginServiceImpl implements LoginService{
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-			
-			Boarder b = new Boarder();
-			b.setUser_id(trueid);
-			
+
 			Controller ctrl = loader.getController();
 			ctrl.setMember(board);
 			System.out.println(board);
