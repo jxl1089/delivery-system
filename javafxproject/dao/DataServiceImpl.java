@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import mainpageservice.Boarder;
 import member.Member;
+
 
 public class DataServiceImpl implements DatabaseService{
 	Connection con;
@@ -141,5 +143,29 @@ public class DataServiceImpl implements DatabaseService{
 			e.printStackTrace();
 		}
 		return memberList;
+	}
+	@Override
+	public List<Boarder> selectAll1() {
+		// TODO Auto-generated method stub
+		String sql = "select * from quest";
+		List<Boarder> boarderList = new ArrayList<Boarder>();
+		try {
+			pstmt  = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Boarder b = new Boarder();
+				b.setQuest_id(rs.getString(1));
+				b.setUser_id(rs.getString(2));
+				b.setUser_name(rs.getString(3));
+				b.setQuest_detail(rs.getString(4));
+				b.setQuest_price(rs.getInt(5));
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return boarderList;
 	}
 }
