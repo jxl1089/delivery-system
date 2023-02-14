@@ -1,4 +1,4 @@
-package mainpageservice;
+package board;
 
 
 public class Boarder {

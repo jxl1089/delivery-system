@@ -16,6 +16,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import mainpageservice.WritePageService;
+import mainpageservice.WritePageServiceImpl;
+import mainpageservice.mainpageService;
+import mainpageservice.mainpageServiceImpl;
 import memberservice.CommonService;
 import memberservice.CommonServiceImpl;
 import memberservice.MemberService;
@@ -28,13 +32,17 @@ public class Controller {
 	private LoginService ls;
 	private CommonService cs;
 	private Parent member;
+	private Parent board;
 	private MemberService ms;
-	
+	private mainpageService mp;
+	private WritePageService wp;
 	
 	public Controller() {
 		ls = new LoginServiceImpl();
 		cs = new CommonServiceImpl();
 		ms = new MemberServiceImpl();
+		mp = new mainpageServiceImpl();
+		wp = new WritePageServiceImpl();
 	}
 	
 	public void setRoot(Parent root) {
@@ -48,18 +56,25 @@ public class Controller {
 	}
 	
 	public void loginProc() {
-		System.out.println(root);
 		ls.loginProc(root);
 	}
 	public void cancelProc(ActionEvent event) {
 		cs.cancleEvent(event);
 	}
 	public void membershipProc() {
+		System.out.println(root);
 		ls.membershipProc(root);
 	}
 	
 	public void joinMember() {
 		ms.joinMember(member);
+	}
+	
+	public void wirteProc() {
+		mp.wirteProc(root);
+	}
+	public void writeQuest() {
+		wp.writeQuest(member);
 	}
 	
 	@FXML
@@ -69,27 +84,13 @@ public class Controller {
 	
 	public void logout(ActionEvent event) throws Exception {
 		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("로그아웃");
-		alert.setHeaderText("정말 로그아웃 하시겠습니까?");
+		alert.setTitle("종료");
+		alert.setHeaderText("정말 종료 하시겠습니까?");
 		
 		if(alert.showAndWait().get() == ButtonType.OK) {
 		Stage stage = (Stage) scenePane.getScene().getWindow();
-		System.out.println("정상적으로 로그아웃 되었습니다.");
-		
-		try {
-			Parent login = 
-		FXMLLoader.load(getClass().getResource("../pageView/login.fxml"));
-			Scene scene = new Scene(login);
-			stage.setScene(scene);
-			stage.show();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
-			
-		
+		System.out.println("정상적으로 종료 되었습니다.");
+		stage.close();
 		} 
 		}
 		

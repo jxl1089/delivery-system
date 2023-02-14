@@ -12,8 +12,7 @@ public class MainPage extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader(getClass
-				().getResource("MainPage.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPage.fxml"));
 		Parent root = loader.load();
 		
 		Controller ctrl = loader.getController();

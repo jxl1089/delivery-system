@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import mainpageservice.Boarder;
+import board.Boarder;
 import member.Member;
 
 
@@ -136,6 +136,7 @@ public class DataServiceImpl implements DatabaseService{
 				m.setAge(rs.getInt(5));
 				m.setGender(rs.getString(6));
 				m.setPhoneNum(rs.getString(7));
+				
 			
 			}
 		} catch (Exception e) {
@@ -144,28 +145,31 @@ public class DataServiceImpl implements DatabaseService{
 		}
 		return memberList;
 	}
+
 	@Override
-	public List<Boarder> selectAll1() {
+	public boolean q_insert(Boarder b) {
 		// TODO Auto-generated method stub
-		String sql = "select * from quest";
-		List<Boarder> boarderList = new ArrayList<Boarder>();
+		//primarykey값을 어떻게 가져올 것인가
+		String sql = "insert into quest values (? , ? , ? , ?)";
 		try {
-			pstmt  = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, b.getQuest_id());
+			pstmt.setString(2, b.getUser_id());
+			pstmt.setString(3, b.getQuest_detail());
+			pstmt.setInt(4, b.getQuest_price());
 			
-			while(rs.next()) {
-				Boarder b = new Boarder();
-				b.setQuest_id(rs.getString(1));
-				b.setUser_id(rs.getString(2));
-				b.setUser_name(rs.getString(3));
-				b.setQuest_detail(rs.getString(4));
-				b.setQuest_price(rs.getInt(5));
+			int result = pstmt.executeUpdate();
+			
+			if(result == 1) {
+				System.out.println("심부름 등록 완료");
+				return true;
 			}
-			
-		}catch (Exception e) {
+			pstmt.close();
+		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 		}
-		return boarderList;
+		return false;
 	}
+
+
 }
