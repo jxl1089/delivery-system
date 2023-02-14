@@ -24,8 +24,13 @@ public class WritePageServiceImpl implements WritePageService{
 		
 		TextField details = (TextField)root.lookup("#q_detail");
 		TextField price = (TextField)root.lookup("#q_price");
+		String price2 = price.getText();
+		int price3 = Integer.parseInt(price2);
+		
 		
 		Boarder b = new Boarder();
+		b.setQuest_detail(details.getText());
+		b.setQuest_price(price3);
 		
 	}
 
