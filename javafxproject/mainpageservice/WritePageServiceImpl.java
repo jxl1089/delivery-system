@@ -25,6 +25,10 @@ public class WritePageServiceImpl implements WritePageService{
 		ls = new LoginServiceImpl();
 	}
 	
+	public static String uid(String id) {
+		return id;
+	}
+	
 
 	public static String longToBase64(long v) {
 		final char[] digits = {
@@ -70,11 +74,11 @@ public class WritePageServiceImpl implements WritePageService{
 		    
 		}
 		
-
+		String uid2 = uid(id);
 		
 		Boarder b = new Boarder();
 		b.setQuest_id(qid);
-		b.setUser_id("2");
+		b.setUser_id(uid2);
 		b.setQuest_detail(details.getText());
 		b.setQuest_price(price3);
 		

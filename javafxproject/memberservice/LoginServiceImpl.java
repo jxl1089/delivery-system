@@ -25,6 +25,7 @@ import member.Member;
 
 public class LoginServiceImpl implements LoginService{
 	DatabaseService ds;
+	WritePageServiceImpl wp;
 	
 	public LoginServiceImpl() {
 		// TODO Auto-generated constructor stub
@@ -44,6 +45,8 @@ public class LoginServiceImpl implements LoginService{
 			System.out.println("로그인 성공");
 			Stage s = (Stage)root.getScene().getWindow();
 			s.close();
+			
+			wp.uid(id.getText());
 			
 			Stage mainP = new Stage();
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../pageView/MainPage.fxml"));
