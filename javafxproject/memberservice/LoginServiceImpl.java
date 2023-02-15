@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import mainpageservice.WritePageServiceImpl;
 import member.Member;
 
 public class LoginServiceImpl implements LoginService{
@@ -29,15 +30,16 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated constructor stub
 		ds = new DataServiceImpl();
 	}
-	
+
 	@Override
 	public void loginProc(Parent root) {
 		// TODO Auto-generated method stub
 
 		TextField id = (TextField)root.lookup("#txtId");
-		String trueid = id.getText();
+
 		PasswordField pw = (PasswordField) root.lookup("#txtPw");
-		
+		WritePageServiceImpl uid = new WritePageServiceImpl();
+		uid.id = id.getText();
 		if(ds.loginChk(id.getText(), pw.getText())) {
 			System.out.println("로그인 성공");
 			Stage s = (Stage)root.getScene().getWindow();
@@ -54,7 +56,7 @@ public class LoginServiceImpl implements LoginService{
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-
+			
 			Controller ctrl = loader.getController();
 			ctrl.setMember(board);
 			System.out.println(board);
