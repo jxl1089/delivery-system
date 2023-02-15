@@ -10,7 +10,7 @@ public interface DatabaseService {
 	public boolean insert(Member m);
 	public boolean chkId(String id);
 	public boolean loginChk(String id, String pw);
-	public List<Member> selectAll();
+	public List<Boarder> selectAll();
 	
 
 

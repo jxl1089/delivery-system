@@ -21,7 +21,7 @@ public class DataServiceImpl implements DatabaseService{
 		
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String user = "system";
-		String pass = "oracle";
+		String pass = "1234";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -118,33 +118,6 @@ public class DataServiceImpl implements DatabaseService{
 		return false;
 	}
 
-	@Override
-	public List<Member> selectAll() {
-		// TODO Auto-generated method stub
-		String sql = "select * from member";
-		List<Member> memberList = new ArrayList<Member>();
-		try {
-			pstmt  = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				Member m = new Member();
-				m.setId(rs.getString(1));
-				m.setPw(rs.getString(2));
-				m.setName(rs.getString(3));
-				m.setEmail(rs.getString(4));
-				m.setAge(rs.getInt(5));
-				m.setGender(rs.getString(6));
-				m.setPhoneNum(rs.getString(7));
-				
-			
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		return memberList;
-	}
 
 	@Override
 	public boolean q_insert(Boarder b) {
@@ -171,5 +144,30 @@ public class DataServiceImpl implements DatabaseService{
 		return false;
 	}
 
+	@Override
+	public List<Boarder> selectAll() {
+		// TODO Auto-generated method stub
+		String sql = "select * from quest";
+		List<Boarder> boarderList = new ArrayList<Boarder>();
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Boarder m = new Boarder();
+				m.setQuest_id(rs.getString(1));
+				m.setUser_id(rs.getString(2));
+				m.setQuest_detail(rs.getString(3));
+				m.setQuest_price(rs.getInt(4));	
+				boarderList.add(m);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return boarderList;
 
+
+}
 }
