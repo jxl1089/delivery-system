@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import member.Member;
 
 public interface mainpageService {
-	void boarderinfo();
+	void boarderinfo(Parent root);
 	void wirteProc(Parent root);
 	
 }

@@ -76,6 +76,9 @@ public class Controller {
 	public void writeQuest() {
 		wp.writeQuest(member);
 	}
+	public void boarderinfo() {
+		mp.boarderinfo(member);
+	}
 	
 	@FXML
 	private Button logout_button;

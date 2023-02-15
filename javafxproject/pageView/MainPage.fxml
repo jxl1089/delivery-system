@@ -41,12 +41,12 @@
          </font>
       </Button>
 
-      <TableView layoutX="44.0" layoutY="324.0" prefHeight="200.0" prefWidth="450.0">
+      <TableView fx:id="tableView" layoutX="44.0" layoutY="324.0" prefHeight="200.0" prefWidth="450.0">
         <columns>
-          <TableColumn fx:id = "quest_id" prefWidth="75.0" text="고유번호" />
-          <TableColumn fx:id = "user_id" prefWidth="75.0" text="아이디" />
-            <TableColumn fx:id = "quest_detail" prefWidth="167.0" text="내용" />
-            <TableColumn fx:id = "quest_price" minWidth="0.0" prefWidth="66.0" text="가격" />
+          <TableColumn prefWidth="75.0" text="고유번호" />
+          <TableColumn  prefWidth="75.0" text="아이디" />
+            <TableColumn  prefWidth="167.0" text="내용" />
+            <TableColumn  minWidth="0.0" prefWidth="66.0" text="가격" />
                </columns>
       </TableView>
    </children>

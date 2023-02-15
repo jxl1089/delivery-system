@@ -1,14 +1,16 @@
 package board;
 
+import java.awt.Button;
 
 public class Boarder {
+	
 	
 	String quest_id;
 	String user_id;
 	String user_name;
 	String quest_detail;
 	int quest_price;
-	boolean btn_boarder;
+	Button button;
 	
 	
 	
@@ -43,10 +45,11 @@ public class Boarder {
 	public void setQuest_price(int quest_price) {
 		this.quest_price = quest_price;
 	}
-	public boolean isBtn_boarder() {
-		return btn_boarder;
+	public Button getButton() {
+		return button;
 	}
-	public void setBtn_boarder(boolean btn_boarder) {
-		this.btn_boarder = btn_boarder;
+	public void setButton(Button button) {
+		this.button = button;
 	}
+	
 }
