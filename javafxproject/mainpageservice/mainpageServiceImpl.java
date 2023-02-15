@@ -24,10 +24,36 @@ public class mainpageServiceImpl implements mainpageService{
 	
 	DatabaseService ds;
 
+	@SuppressWarnings("unchecked")
 	public void boarderinfo(Parent root) {	
+		
+Stage stage = new Stage();
+		
+		AnchorPane ap = new AnchorPane();
 
 		TableView<Boarder> tableview = (TableView<Boarder>) root.lookup("#tableView");
+
+		TableColumn<Boarder, String> quest_id = new TableColumn<>("quest_id");
+		quest_id.setCellValueFactory(new PropertyValueFactory<>("quest_id"));
+		TableColumn<Boarder, String> user_id = new TableColumn<>("user_id");
+		user_id.setCellValueFactory(new PropertyValueFactory<>("user_id"));
+		TableColumn<Boarder, String> quest_detail = new TableColumn<>("quest_detail");
+		quest_detail.setCellValueFactory(new PropertyValueFactory<>("quest_detail"));
+		TableColumn<Boarder, Integer> quest_price = new TableColumn<>("quest_price");
+		quest_price.setCellValueFactory(new PropertyValueFactory<>("quest_price"));
 		
+		
+		tableview.getColumns().addAll(quest_id, user_id,quest_detail,quest_price);
+		
+		List<Boarder> boarderList = ds.selectAll();
+		ObservableList<Boarder> data = 
+				FXCollections.observableArrayList(boarderList);
+		tableview.setItems(data);
+		
+		ap.getChildren().add(tableview);
+		stage.setScene(new Scene(ap, 400, 200));
+		stage.setTitle("글정보");
+		stage.show();
 	}
 
 
