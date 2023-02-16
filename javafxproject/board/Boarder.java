@@ -10,17 +10,18 @@ public class Boarder {
 	String user_name;
 	String quest_detail;
 	int quest_price;
-	public boolean isButton() {
+	Button button;
+
+
+
+
+
+	public Button getButton() {
 		return button;
 	}
-	public void setButton(boolean button) {
+	public void setButton(Button button) {
 		this.button = button;
 	}
-	boolean button;
-	
-	
-	
-	
 	public String getQuest_id() {
 		return quest_id;
 	}

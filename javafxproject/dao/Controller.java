@@ -4,7 +4,11 @@ import memberservice.LoginService;
 import memberservice.LoginServiceImpl;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
+import board.Boarder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -36,7 +41,11 @@ public class Controller {
 	private MemberService ms;
 	private mainpageService mp;
 	private WritePageService wp;
-	
+	@FXML
+    private TableView<Boarder> tableView;
+	PreparedStatement pstmt;
+	Connection con;
+	ResultSet rs;
 	public Controller() {
 		ls = new LoginServiceImpl();
 		cs = new CommonServiceImpl();
@@ -83,6 +92,10 @@ public class Controller {
 	public void mypage() {
 		mp.mypage(root);
 	}
+	public void refresh() {
+		System.out.println(member);
+		mp.refresh(member);
+	}
 	
 	@FXML
 	private Button logout_button;
@@ -100,7 +113,36 @@ public class Controller {
 		stage.close();
 		} 
 		}
+	
+	public boolean remove(ActionEvent event) {
+		// TODO Auto-generated method stub
+		Boarder b = new Boarder();
+		int selectId = tableView.getSelectionModel().getSelectedIndex();
+		tableView.getItems().remove(selectId);
+		String sql = "delete quest values(?,?,?,?)";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, b.getQuest_id());
+			pstmt.setString(2, b.getUser_id());
+			pstmt.setString(3, b.getQuest_detail());
+			pstmt.setInt(4, b.getQuest_price());
+			
+			rs = pstmt.executeQuery();
+			rs.next();
+			int result = rs.getInt(1);
+			
+			if(result >=1) {
+				return true;
+			}
+			pstmt.close();
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		return false;
 		
+	}
+	 
+	
 		
 		
 	}

@@ -13,11 +13,13 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -29,7 +31,7 @@ import member.Member;
 public class mainpageServiceImpl implements mainpageService{
 	
 	DatabaseService ds;
-
+	
 	public mainpageServiceImpl() {
 		ds = new DataServiceImpl();
 	}
@@ -46,19 +48,13 @@ public class mainpageServiceImpl implements mainpageService{
 		quest_detail.setCellValueFactory(new PropertyValueFactory<>("quest_detail"));
 		TableColumn<Boarder, Integer> quest_price = new TableColumn<>("가격");
 		quest_price.setCellValueFactory(new PropertyValueFactory<>("quest_price"));
-		 TableColumn<Boarder, Boolean> accept_button = new TableColumn<>("Action");
-		 accept_button.setSortable(false);
-
-		 accept_button.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Boarder, Boolean>, ObservableValue<Boolean>>() {
-		      @Override public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<Boarder, Boolean> features) {
-		        return new SimpleBooleanProperty(features.getValue() != null);
-		      }
-		    });
+		
 		
 		quest_id.setPrefWidth(100);
 		user_id.setPrefWidth(100);
-		quest_detail.setPrefWidth(100);
-		quest_price.setPrefWidth(100);
+		quest_detail.setPrefWidth(110);
+		quest_price.setPrefWidth(150);
+		
 		tableview.getColumns().addAll(quest_id, user_id, quest_detail, quest_price);
 		
 		List<Boarder> boarderList = ds.selectAll();
@@ -66,6 +62,8 @@ public class mainpageServiceImpl implements mainpageService{
 		ObservableList<Boarder> data = 
 				FXCollections.observableArrayList(boarderList);
 		tableview.setItems(data);
+	
+		
 		
 	}
 
@@ -114,6 +112,15 @@ public class mainpageServiceImpl implements mainpageService{
 		membershipForm.show();
 		
 	}
+	@Override
+	public void refresh(Parent root) {
+		// TODO Auto-generated method stub
+		List<Boarder> boarderList = ds.selectAll();
+		boarderinfo(root);
+		
+	}
+	
+	
 	
 
 	

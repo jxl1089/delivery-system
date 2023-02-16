@@ -84,7 +84,9 @@ public class WritePageServiceImpl implements WritePageService{
 		
 		if(ds.q_insert(b)) {
 			Stage s = (Stage) root.getScene().getWindow();
+			
 			s.close();
+			
 		}
 		
 	}
