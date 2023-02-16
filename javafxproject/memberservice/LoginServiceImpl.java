@@ -21,15 +21,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import mainpageservice.WritePageServiceImpl;
+import mainpageservice.mainpageService;
+import mainpageservice.mainpageServiceImpl;
 import member.Member;
 
 public class LoginServiceImpl implements LoginService{
 	DatabaseService ds;
 	WritePageServiceImpl wp;
-	
+	mainpageService ms ;
 	public LoginServiceImpl() {
 		// TODO Auto-generated constructor stub
 		ds = new DataServiceImpl();
+		ms = new mainpageServiceImpl();
 	}
 
 	@Override
@@ -62,7 +65,9 @@ public class LoginServiceImpl implements LoginService{
 			
 			Controller ctrl = loader.getController();
 			ctrl.setMember(board);
-			System.out.println(board);
+			
+			ms.boarderinfo(board);
+			
 			mainP.setTitle("메인페이지");
 			mainP.show();
 			
@@ -75,6 +80,7 @@ public class LoginServiceImpl implements LoginService{
 		
 		//여기의 id값을 wirtepageservice에 가져가야함
 	}
+
 
 	@Override
 	public void membershipProc(Parent root) {

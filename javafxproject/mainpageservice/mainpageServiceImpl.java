@@ -4,6 +4,7 @@ import java.util.List;
 
 import board.Boarder;
 import dao.Controller;
+import dao.DataServiceImpl;
 import dao.DatabaseService;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
@@ -24,36 +25,36 @@ public class mainpageServiceImpl implements mainpageService{
 	
 	DatabaseService ds;
 
+	public mainpageServiceImpl() {
+		ds = new DataServiceImpl();
+	}
 	@SuppressWarnings("unchecked")
 	public void boarderinfo(Parent root) {	
 		
-Stage stage = new Stage();
-		
-		AnchorPane ap = new AnchorPane();
-
 		TableView<Boarder> tableview = (TableView<Boarder>) root.lookup("#tableView");
 
-		TableColumn<Boarder, String> quest_id = new TableColumn<>("quest_id");
+		TableColumn<Boarder, String> quest_id = new TableColumn<>("고유번호");
 		quest_id.setCellValueFactory(new PropertyValueFactory<>("quest_id"));
-		TableColumn<Boarder, String> user_id = new TableColumn<>("user_id");
+		TableColumn<Boarder, String> user_id = new TableColumn<>("사용자");
 		user_id.setCellValueFactory(new PropertyValueFactory<>("user_id"));
-		TableColumn<Boarder, String> quest_detail = new TableColumn<>("quest_detail");
+		TableColumn<Boarder, String> quest_detail = new TableColumn<>("상세내용");
 		quest_detail.setCellValueFactory(new PropertyValueFactory<>("quest_detail"));
-		TableColumn<Boarder, Integer> quest_price = new TableColumn<>("quest_price");
+		TableColumn<Boarder, Integer> quest_price = new TableColumn<>("가격");
 		quest_price.setCellValueFactory(new PropertyValueFactory<>("quest_price"));
-		
-		
-		tableview.getColumns().addAll(quest_id, user_id,quest_detail,quest_price);
-		
+		quest_id.setPrefWidth(100);
+		user_id.setPrefWidth(100);
+		quest_detail.setPrefWidth(100);
+		quest_price.setPrefWidth(100);
+		tableview.getColumns().addAll(quest_id, user_id, quest_detail, quest_price);
 		List<Boarder> boarderList = ds.selectAll();
+		
 		ObservableList<Boarder> data = 
 				FXCollections.observableArrayList(boarderList);
 		tableview.setItems(data);
 		
-		ap.getChildren().add(tableview);
-		stage.setScene(new Scene(ap, 400, 200));
-		stage.setTitle("글정보");
-		stage.show();
+		
+		
+		
 	}
 
 

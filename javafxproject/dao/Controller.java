@@ -77,6 +77,7 @@ public class Controller {
 		wp.writeQuest(member);
 	}
 	public void boarderinfo() {
+		
 		mp.boarderinfo(member);
 	}
 	

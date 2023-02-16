@@ -155,12 +155,12 @@ public class DataServiceImpl implements DatabaseService{
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				Boarder m = new Boarder();
-				m.setQuest_id(rs.getString(1));
-				m.setUser_id(rs.getString(2));
-				m.setQuest_detail(rs.getString(3));
-				m.setQuest_price(rs.getInt(4));	
-				boarderList.add(m);
+				Boarder b = new Boarder();
+				b.setQuest_id(rs.getString(1));
+				b.setUser_id(rs.getString(2));
+				b.setQuest_detail(rs.getString(3));
+				b.setQuest_price(rs.getInt(4));	
+				boarderList.add(b);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
