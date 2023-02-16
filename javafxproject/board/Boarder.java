@@ -10,7 +10,13 @@ public class Boarder {
 	String user_name;
 	String quest_detail;
 	int quest_price;
-	Button button;
+	public boolean isButton() {
+		return button;
+	}
+	public void setButton(boolean button) {
+		this.button = button;
+	}
+	boolean button;
 	
 	
 	
@@ -45,11 +51,6 @@ public class Boarder {
 	public void setQuest_price(int quest_price) {
 		this.quest_price = quest_price;
 	}
-	public Button getButton() {
-		return button;
-	}
-	public void setButton(Button button) {
-		this.button = button;
-	}
+	
 	
 }

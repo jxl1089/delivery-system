@@ -147,7 +147,7 @@ public class DataServiceImpl implements DatabaseService{
 	@Override
 	public List<Boarder> selectAll() {
 		// TODO Auto-generated method stub
-		String sql = "select * from quest";
+		String sql = "select quest_id,name,quest_detail,price from member m, quest q where m.id = q.user_id";
 		List<Boarder> boarderList = new ArrayList<Boarder>();
 		try {
 			pstmt = con.prepareStatement(sql);

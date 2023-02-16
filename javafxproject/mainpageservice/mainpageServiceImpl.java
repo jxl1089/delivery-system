@@ -1,5 +1,6 @@
 package mainpageservice;
 
+
 import java.util.List;
 
 import board.Boarder;
@@ -8,17 +9,21 @@ import dao.DataServiceImpl;
 import dao.DatabaseService;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import member.Member;
 
 public class mainpageServiceImpl implements mainpageService{
@@ -41,11 +46,21 @@ public class mainpageServiceImpl implements mainpageService{
 		quest_detail.setCellValueFactory(new PropertyValueFactory<>("quest_detail"));
 		TableColumn<Boarder, Integer> quest_price = new TableColumn<>("가격");
 		quest_price.setCellValueFactory(new PropertyValueFactory<>("quest_price"));
+		 TableColumn<Boarder, Boolean> accept_button = new TableColumn<>("Action");
+		 accept_button.setSortable(false);
+
+		 accept_button.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Boarder, Boolean>, ObservableValue<Boolean>>() {
+		      @Override public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<Boarder, Boolean> features) {
+		        return new SimpleBooleanProperty(features.getValue() != null);
+		      }
+		    });
+		
 		quest_id.setPrefWidth(100);
 		user_id.setPrefWidth(100);
 		quest_detail.setPrefWidth(100);
 		quest_price.setPrefWidth(100);
 		tableview.getColumns().addAll(quest_id, user_id, quest_detail, quest_price);
+		
 		List<Boarder> boarderList = ds.selectAll();
 		
 		ObservableList<Boarder> data = 
@@ -99,6 +114,7 @@ public class mainpageServiceImpl implements mainpageService{
 		membershipForm.show();
 		
 	}
+	
 
 	
 
