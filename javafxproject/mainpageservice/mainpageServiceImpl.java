@@ -52,12 +52,7 @@ public class mainpageServiceImpl implements mainpageService{
 				FXCollections.observableArrayList(boarderList);
 		tableview.setItems(data);
 		
-		
-		
-		
 	}
-
-
 
 	@Override
 	public void wirteProc(Parent root) {
@@ -80,6 +75,29 @@ public class mainpageServiceImpl implements mainpageService{
 		
 		membershipForm.setTitle("글쓰기");
 		membershipForm.show();
+	}
+	@Override
+	public void mypage(Parent root) {
+		// TODO Auto-generated method stub
+		Stage membershipForm = new Stage();
+
+		FXMLLoader loader = new FXMLLoader(
+				getClass().getResource("../pageView/MyPage.fxml"));
+
+		Parent boarder = null;
+		try {
+			boarder = loader.load();
+			membershipForm.setScene(new Scene(boarder));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		Controller ctrl = loader.getController();
+		ctrl.setMember(boarder);
+		
+		membershipForm.setTitle("마이페이지");
+		membershipForm.show();
+		
 	}
 
 	

@@ -80,6 +80,9 @@ public class Controller {
 		
 		mp.boarderinfo(member);
 	}
+	public void mypage() {
+		mp.mypage(root);
+	}
 	
 	@FXML
 	private Button logout_button;
